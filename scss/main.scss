@@ -1,0 +1,1888 @@
+@import "mixin";
+@import "variables";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans Narrow", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: #141619;
+  background-image: url(/dist/img/chef-bg.png);
+  font-family: 'PT Sans Narrow', sans-serif;
+  height: auto;
+}
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+//Header start
+.header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  
+  &-top{
+    width: 100%;
+    height: 10%;
+    @include flex-center;
+    position: fixed;
+    background-color:rgba(9, 9, 9, 0.70);
+    z-index: 999999999999999;
+  }
+
+  &-bottom {
+    width: 100%;
+    height: 85%;
+    display: flex;
+  }
+
+  &-nav{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+
+    @include tablet{
+      width: 90%;
+    }
+
+    &-logo{
+      width: 20%;
+      height: 97%;
+      display: flex;
+      align-items: center;
+
+      @include tablet{
+        height: 72%;
+        position: relative;
+        right: 30px;
+      }
+    }
+
+    &-left{
+      width: 40%;
+      height: 100%;
+    }
+  }
+}
+
+.nav-left {
+  width: 50%;
+
+  @include tablet{
+    width: 70%;
+  }
+}
+
+.nav-right {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+
+  @include tablet{
+    width: 100%;
+    height: 70%;
+  }
+}
+// Header End
+/////////////////
+// Menu 1 Start
+.menu1 {
+  width: 100%;
+  height: 100px;
+  list-style-type: none;
+  @include flex-around;
+  position: relative;
+}
+
+.menu1 > li > a {
+  color: white;
+  text-transform: uppercase;
+}
+
+.menu1 > li > a:hover {
+  color: orange;
+}
+
+// Menu 1 End
+/////////////////////////////////////////////////////////
+// Drop-Down 1 start
+.drop-down1 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.drop-down1:hover > .menu2 {
+  visibility: visible;
+  opacity: 1;
+  top: 80px;
+}
+
+// Drop-Down 1 End
+///////////////////////////////////
+//Menu 2 Start
+.menu2 {
+  width: 1012px;
+  height: 300px;
+  background-color: white;
+  position: absolute;
+  left: -334px;
+  top: 90px;
+  display: flex;
+  border-top: 4px solid orange;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  cursor: pointer;
+  z-index: 999999;
+
+  @include tablet{
+    left: -370px;
+  }
+
+  &-left {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &-right {
+    width: 30%;
+    height: 100%;
+    @include flex-center;
+  }
+
+  &-nav {
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    list-style-type: square;
+  }
+  
+}
+
+.menu2-nav > li {
+  color: orange;
+}
+
+.menu2-nav > li > a {
+  color: black;
+  transition: 0.2s;
+}
+
+.menu2-nav > li:hover > a {
+  color: orange;
+}
+
+//Menu 2 End
+/////////////////////////////////////
+//Pizza Start
+.pizza-boxes {
+  width: 33.3%;
+  height: 50%;
+  display: flex;
+  padding: 5px;
+  transition: 0.2s;
+}
+
+.pizza-boxes:hover {
+  background-color: rgba(255, 166, 0, 0.125);
+}
+
+.pizza-img {
+  width: 55%;
+  height: 90%;
+  @include flex-center;
+}
+
+.pizza-img > img {
+  height: 80%;
+}
+
+.pizza-text {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  padding-left: 10px;
+}
+
+//Pizza End
+////////////////////////////////////
+//Drop-Down2 Start
+.drop-down2 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+}
+
+.drop-down2:hover > .menu3 {
+  visibility: visible;
+  opacity: 1;
+  top: 75px;
+}
+
+//Drop-Down2 End
+//////////////////////////////////////////
+//Menu 3 Start
+
+.menu3 {
+  border-top: 4px solid orange;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 90px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 999999;
+
+  &-content {
+    /*  */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left: 30px;
+    justify-content: space-around;
+    flex-direction: column;
+    list-style-type: square;
+  }
+}
+
+.menu3-content > li {
+  color: orange;
+}
+
+.menu3-content > li > a {
+  color: black;
+  transition: 0.2s;
+}
+
+.menu3-content > li:hover > a {
+  color: orange;
+}
+
+//Menu 3 End
+/////////////////////////////////////////
+//Drop-Down3 Start
+.drop-down3 {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 9999999;
+}
+
+.drop-down3:hover > .menu4 {
+  visibility: visible;
+  opacity: 1;
+  top: 75px;
+}
+
+//Drop-Down3 End
+
+.menu4 {
+  border-top: 4px solid orange;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  top: 90px;
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+
+  &-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding-left: 30px;
+    justify-content: space-around;
+    flex-direction: column;
+    list-style-type: square;
+  }
+}
+
+.menu4-content > li {
+  color: orange;
+}
+
+.menu4-content > li > a {
+  color: black;
+  transition: 0.2s;
+}
+
+.menu4-content > li:hover > a {
+  color: orange;
+}
+
+//Menu 4 End
+/////////////////////////////////////////////
+//Phone Start
+.phone {
+  width: 33.3%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  @include tablet{
+    width: 70%;
+  }
+
+  &-block {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &-orange {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+    @include flex-center;
+  }
+
+  &-white {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 32px;
+    transition: 0.3s;
+    @include flex-center;
+  }
+}
+
+.phone > a {
+  color: white;
+}
+
+.phone:hover > .phone-block > .phone-orange {
+  top: -34px;
+}
+
+.phone:hover > .phone-block > .phone-white {
+  top: 0;
+}
+
+//Phone End
+///////////////////////////////////////////
+// Cart Start
+.cart {
+  width: 33.3%;
+  height: 35%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  @include tablet{
+    width: 70%;
+  }
+
+
+  &-block {
+    width: 25%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &-orange {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: 0.3s;
+    @include flex-center;
+  }
+
+  &-white {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 32px;
+    transition: 0.3s;
+    @include flex-center;
+  }
+}
+
+.cart > a {
+  color: white;
+}
+
+.cart:hover > .cart-block > .cart-orange {
+  top: -34px;
+}
+
+.cart:hover > .cart-block > .cart-white {
+  top: 0;
+}
+
+.order-online {
+  width: 33.3%;
+  height: 100%;
+  @include flex-center;
+}
+
+//Cart End
+/////////////////////////////////////////
+// Button 1 Start
+.button1 {
+  width: 90%;
+  height: 45px;
+  background-color: #91b842;
+  transition: 0.3s;
+  border-radius: 50px;
+
+  @include tablet{
+    width: 200%;
+  }
+}
+
+.button1:hover {
+  background-color: rgb(255, 132, 0);
+}
+
+.button1 > a {
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-transform: uppercase;
+  @include flex-center;
+
+  @include tablet{
+    font-size: 15px
+  }
+}
+
+//Button 1 End
+
+.bottom-left {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+// Pizza Animation Start
+
+.pizza {
+  width: auto;
+  height: auto;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  animation: pizza 0.7s 0.8s forwards ease-in-out;
+
+ 
+}
+
+
+@keyframes pizza {
+  from {
+    left: -100px;
+  }
+
+  to {
+    left: 25%;
+    visibility: visible;
+    opacity: 1;
+
+    @include tablet{
+      visibility: hidden;
+    }
+    
+  }
+}
+
+//Pizza Animation End
+//////////////////////////////////////////////
+//Sxtor Animation Start
+.sxtor {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 340px;
+  top: -100px;
+  animation: sxtor1 1s 1.6s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes sxtor1 {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 170px;
+  }
+
+  75% {
+    top: 80px;
+  }
+
+  100% {
+    top: 170px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//Sxtor Animation End
+
+//Text Animation Start
+
+.bottom-right {
+  width: 50%;
+  height: 100%;
+  @include flex-center;
+}
+
+.text-content {
+  width: 90%;
+  height: 90%;
+  position: relative;
+  overflow: hidden;
+}
+
+.text-top {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  animation: text 0.8s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.text-top > span {
+  color: white;
+  font-size: 150px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.text-bottom {
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  top: 80%;
+  animation: text 0.8s 1.1s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.text-bottom > span {
+  color: orange;
+  font-size: 28px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+@keyframes text {
+  from {
+    right: -600px;
+  }
+
+  to {
+    right: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//text animation end
+///////////////////////////////////////////////////////
+//sctor 2 Animation Start
+.sxtor2 {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 230px;
+  top: -100px;
+  animation: sxtor2 0.8s 1.8s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes sxtor2 {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 200px;
+  }
+
+  75% {
+    top: 120px;
+  }
+
+  100% {
+    top: 200px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//sxtor 2 Animation End
+////////////////////////////////////////////////////
+//Bibar Animation Start
+
+.bibar1 {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 200px;
+  top: 100px;
+  animation: bibar1 0.8s 1.8s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes bibar1 {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 110px;
+  }
+
+  75% {
+    top: 70px;
+  }
+
+  100% {
+    top: 110px;
+    visibility: visible;
+    opacity: 1;
+
+    @include tablet{
+    display: none;
+   }
+  }
+}
+
+//Bibar Animation End
+////////////////////////////////////////////////////////
+//Pamidor Animation Start
+
+.pamidor {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 240px;
+  top: 400px;
+  animation: pamidor 0.8s 1.8s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes pamidor {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 570px;
+  }
+
+  75% {
+    top: 470px;
+  }
+
+  100% {
+    top: 570px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//Pamidor Animation End
+//////////////////////////////////////////////////////////
+//Bibar2 Animation Start
+
+.bibar2 {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 395px;
+  top: 30px;
+  animation: bibar2 0.8s 2s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes bibar2 {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 110px;
+  }
+
+  75% {
+    top: 90px;
+  }
+
+  100% {
+    top: 110px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//Bibar2 Animation End
+//////////////////////////////////////////////////////
+//Kanachi animation Start
+
+.kanachi {
+  width: auto;
+  height: auto;
+  position: absolute;
+  right: 200px;
+  animation: kanachi 1.5s 1.8s forwards ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+@keyframes kanachi {
+  0% {
+    top: -100px;
+  }
+
+  50% {
+    top: 550px;
+  }
+
+  75% {
+    top: 400px;
+  }
+
+  100% {
+    top: 550px;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+//Kanachi Animation End
+//////////////////////////////////////////////////////////////////
+//Section 1 Start
+
+.sec1 {
+  width: 100%;
+  height: 428px;
+  background-color: $bcc1;
+  position: relative;
+  @include flex-evenly;
+
+  &-box-top {
+    position: absolute;
+    top: -100px;
+    width: 100%;
+  }
+
+  &-box-bottom {
+    position: absolute;
+    top: 420px;
+    width: 100%;
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+
+  &-top {
+    width: 100%;
+    height: 35%;
+    @include flex-center;
+    transition: 0.5s;
+  }
+
+  &-h1 {
+    width: 100%;
+    height: 70px;
+    @include flex-center;
+  }
+
+  &-text {
+    width: 100%;
+    height: 140px;
+    transition: 0.5s;
+  }
+}
+
+.box-top:hover > img {
+  filter: invert(100%);
+}
+
+.box-top > img {
+  transition: 0.5s;
+}
+
+.box-h1 > h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.box-text > p {
+  text-align: center;
+}
+
+//Section 1 End
+///////////////////////////////////////////////////////////////
+//Section 2 Start
+
+.sec2 {
+  width: 100%;
+  height: 1110px;
+  background-color: white;
+  position: relative;
+
+  & > img{
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+  }
+
+  &-text1 {
+    width: 20%;
+    height: 70px;
+    position: relative;
+    top: 50px;
+    @include flex-center;
+    color: $bcc1;
+  }
+
+  &-text2 {
+    width: 600px;
+    height: 90px;
+    @include flex-center;
+    position: relative;
+    bottom: 90px;
+  }
+
+  &-top {
+    width: 100%;
+    height: 40%;
+    @include flex-around;
+    flex-direction: column;
+    position: relative;
+    top: 160px;
+  }
+
+  &-bottom {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-evenly;
+    gap: -90px;
+    align-items: center;
+    position: relative;
+  }
+
+  &-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.5s;
+  }
+}
+
+.sec2-text1 > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
+}
+
+.sec2-text2 > h1 {
+  font-size: 70px;
+  color: #1d1d1d;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.box1 {
+  width: 450px;
+  height: 450px;
+  @include flex-center;
+  flex-direction: column;
+  position: relative;
+  bottom: 100px;
+}
+
+.sec2-img > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.sec2-img:hover {
+  transform: scale(1.1);
+}
+
+.text {
+  width: 100%;
+  height: 15%;
+  @include flex-center;
+}
+
+.text > a {
+  font-size: 24px;
+  color: #1d1d1d;
+  text-transform: uppercase;
+  transition: 0.2s;
+  font-weight: 700;
+}
+
+.text > a:hover {
+  color: $bcc1;
+}
+
+.view-more {
+  width: 200px;
+  height: 80px;
+  border: 1px solid $bcc1;
+  position: absolute;
+  top: 460px;
+  border-radius: 50px;
+  background-color: $bcc1;
+  @include flex-center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.view-more > h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.view-more:hover {
+  background-color: white;
+}
+
+.view-more:hover > h1 {
+  color: $bcc1;
+}
+
+//Section 2 End
+/////////////////////////////////////////////////////////////
+//Section 3 Start
+
+.sec3 {
+  width: 100%;
+  height: auto;
+  background-color: #141619;
+  position: relative;
+  padding-bottom: 400px;
+  padding-top: 50px;
+
+  & > .sec3-top-img{
+    position: absolute;
+    top: 0;
+  }
+
+  & > .sec3-bottom-img{
+    position: absolute;
+    bottom: 0;
+  }
+
+  &-text1 {
+  width: 20%;
+  height: 70px;
+  position: relative;
+  bottom: 70px;
+  @include flex-center;
+  color: $bcc1;
+  font-size: 30px;
+  }
+
+  &-text2 {
+  width: 600px;
+  height: 90px;
+  @include flex-center;
+  position: relative;
+  bottom: 70px;
+  }
+
+  &-top {
+    width: 100%;
+    height: 40%;
+    @include flex-around;
+    flex-direction: column;
+    position: relative;
+    top: 160px;
+  }
+
+  &-bottom {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 100px;
+    flex-direction: column;
+    @include flex-center;
+
+    &-div1 {
+      width: 100%;
+      height: 100px;
+      @include flex-center;
+    }
+  }
+
+  &-menu {
+    width: 700px;
+    height: 70px;
+    border-radius: 50px;
+    display: flex;
+    list-style-type: none;
+    background-color: #2b2c2d;
+  }
+
+  &-shop-menu {
+    width: 70%;
+    height: 80%;
+    @include flex-around;
+    flex-wrap: wrap;
+  }
+}
+
+.sec3-text2 > h1 {
+  font-size: 70px;
+  color: white;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.sec3-text1 > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 30px;
+}
+
+.ing {
+  width: 100px;
+  height: 70px;
+  text-transform: uppercase;
+  @include flex-center;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+}
+
+.ing1 {
+  width: 100px;
+  height: 70px;
+  background-color: $bcc1;
+  border-radius: 50px;
+  text-transform: uppercase;
+  @include flex-center;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+}
+
+.igg2 {
+  width: 100px;
+  height: 70px;
+  border-bottom-right-radius: 50px;
+  border-top-right-radius: 50px;
+  text-transform: uppercase;
+  @include flex-center;
+  cursor: pointer;
+  color: white;
+}
+
+
+.boxik{
+  width: 306px;
+  height: 395px;
+
+  &-img{
+    width: 100%;
+    height: 200px;
+    @include flex-center;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  &-name{
+    width: 100%;
+    height: 30px;
+    color: white;
+    font-size: 18px;
+    @include flex-center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+
+  &-text{
+    width: 100%;
+    height: 70px;
+    color: rgb(108, 108, 108);
+    text-align: center;
+  }
+
+  &-price{
+    width: 100%;
+    height: 30px;
+    color: $bcc1;
+    font-size: 18px;
+    @include flex-center;
+  }
+}
+
+.boxik-img:hover{
+  transform: translateY(-20px);
+}
+
+.boxik-name:hover{
+  color: $bcc1;
+}
+
+//Section 3 End
+////////////////////////////////////////////////////////////////
+//Section 4 Start
+
+.sec4{
+  width: 100%;
+  height: 630px;
+  background-color: white;
+  @include flex-center;
+  position: relative;
+
+  // & > img{
+  //   position: absolute;
+  //   top: 0;
+  // }
+
+  &-left{
+    width: 25%;
+    height: 90%;
+  }
+  
+  &-right{
+    width: 40%;
+    height: 90%;
+  }
+  
+  &-text{
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.gg{
+  position: relative;
+  top: 20px;
+}
+
+.sec4-text > h3{
+  color: $bcc1;
+  font-size: 40px;
+  font-weight: 300;
+  font-family: Pacifico;
+}
+
+.sec4-text > h1{
+  font-size: 70px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.boxlo{
+  width: 500px;
+  height: 150px;
+  border: 15px solid $bcc1;
+  position: relative;
+  top: 50px;
+  background-color: #141619;
+  display: flex;
+  transition: 0.5s;
+  cursor: pointer;
+
+  &-img{
+    width: 18%;
+    height: 95%;
+    background-image: url(/dist/img/online-call.png);
+    background-repeat: no-repeat;
+    background-size: 65px;
+    @include flex-center;
+    position: relative;
+    top: 15px;
+    left: 20px;
+    transition: 0.5s;
+  }
+
+  &-tell{
+    width: 80%;
+    height: 100%;
+    color: white;
+    font-size: 30px;
+    @include flex-center;
+    transition: 0.5s;
+  }
+}
+
+.boxlo:hover > .boxlo-img{
+  background-image: url(/dist/img/online-call-hover.png);
+}
+
+.boxlo:hover{
+  background-color: white;
+}
+
+.boxlo:hover > .boxlo-tell{
+  color: black;
+}
+
+.right-text{
+  width: 300px;
+  height: 100px;
+  @include flex-center;
+}
+
+.right-top{
+  width: 100%;
+  height: 110px;
+  @include flex-center;
+}
+
+.right-text > h1{
+  font-size: 40px;
+}
+
+.right-bottom{
+  width: 100%;
+  height: auto;
+  @include flex-center;
+}
+
+
+.input{
+  width: 590px;
+  height: 60px;
+  margin-top: 20px;
+  margin-left: 150px;
+  font-size: 20px;
+}
+
+.submit{
+  width: 200px;
+  height: 70px;
+  border-radius: 50px;
+  background-color: #141619;
+  color: white;
+  @include flex-center;
+  position: relative;
+  top: 30px;
+  left: 350px;
+  cursor: pointer;
+  border: 1px solid black;
+  transition: 0.5s;
+}
+
+.submit > h1{
+  text-transform: uppercase;
+  color: white;
+  font-size: 18px;
+}
+
+.submit:hover{
+  background-color: white;
+}
+
+.submit:hover > h1{
+  color: black;
+}
+
+//Section 4 end
+/////////////////////////////////////////////////////////
+//Section 5 Start
+
+.sec5{
+  width: 100%;
+  height: 780px;
+  position: relative;
+
+  & > img{
+    position: absolute;
+    top: 0;
+
+  }
+
+  &-text1 {
+    width: 20%;
+    height: 70px;
+    @include flex-center;
+    color: $bcc1;
+    font-size: 30px;
+    position: relative;
+    bottom: 50px;
+  }
+
+  &-text2 {
+    width: 600px;
+    height: 90px;
+    @include flex-center;
+    position: relative;
+    bottom: 70px;
+  }
+  
+  &-top {
+    width: 100%;
+    height: 20%;
+    @include flex-around;
+    flex-direction: column;
+    position: relative;
+    top: 160px;
+  }
+  
+  &-box{
+    margin-top: 50px;
+    width: 100%;
+    height: 98%;
+    position: relative;
+    bottom: 100px;
+    @include flex-center;
+    gap: 30px;
+    transition: 0.5s;
+  }
+  
+  &-boxer{
+    width: 270px;
+    height: 350px;
+  }
+
+  &-box-img{
+    width: 100%;
+    height: 260px;
+  }
+
+  &-box-bottom{
+    background-color: white;
+    width: 100%;
+    height: 90px;
+    @include flex-center;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+}
+
+.bg{
+  position: absolute;
+  top: 4850px;
+}
+
+.sec5-text2 > h1 {
+  font-size: 70px;
+  color: white;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.sec5-text1 > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 45px;
+  font-weight: 300;
+}
+
+.sec5-boxer:hover > .sec5-box-bottom{
+  color: $bcc1;
+}
+
+.sec5-box-img > img{
+  width: 100%;
+  height: 100%;
+}
+
+//Section 5 End
+/////////////////////////////////////////////////////////
+//Section 6 Start
+
+.sec6{
+  width: 100%;
+  height: 816px;
+  background-color: white;
+  @include flex-center;
+  flex-direction: column;
+
+  &-text1 {
+    width: 20%;
+    height: 70px;
+    @include flex-center;
+    color: $bcc1;
+    font-size: 30px;
+    position: relative;
+    bottom: 50px;
+  }
+
+  &-text2 {
+    width: 600px;
+    height: 90px;
+    @include flex-center;
+    position: relative;
+    bottom: 50px;
+  }
+  
+  &-top {
+    width: 100%;
+    height: 20%;
+    @include flex-around;
+    flex-direction: column;
+    position: relative;
+    
+  }
+  
+  &-box{
+    width: 80%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  &-boxer{
+    width: 385px;
+    height: 308px;
+    transition: 0.5s;
+  }
+
+  &-klor{
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: #fd9d3e;
+    position: relative;
+    bottom: 40px;
+    left: 260px;
+    color: white;
+    @include flex-center;
+    flex-direction: column;
+    transition: 0.5s;
+  }
+
+  &-text{
+    width: 100%;
+    height: auto;
+    position: relative;
+    bottom: 70px;
+  }
+}
+
+.bg1{
+  position: relative;
+  top: 30px;
+}
+
+.sec6-text2 > h1 {
+  font-size: 80px;
+  color: black;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.sec6-text1 > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 45px;
+  font-weight: 300;
+}
+
+.sec6-boxer > img{
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.sec6-boxer:hover > img{
+  transform: translateY(-30px);
+}
+
+.sec6-boxer:hover > .sec6-klor{
+  transform: translateY(-30px);
+}
+
+.sec6-text > h3:hover{
+  color: #fd9d3e;
+  cursor: pointer;
+}
+
+.sec6-text > a{
+  color: $bcc1;
+}
+
+.bg2{
+  position: relative;
+  bottom: 80px;
+}
+
+//section 6 end
+///////////////////////////////////////////////////
+//Section 7 Start
+
+.sec7{
+  width: 100%;
+  height: 630px;
+  background-color: #141619;
+  position: relative;
+  bottom: 190px;
+  z-index: -99999;
+
+  &-text1 {
+    width: 50%;
+    height: 70px;
+    @include flex-center;
+    color: #fd9d3e;
+    font-size: 30px;
+    position: relative;
+    top: 50px;
+  }
+
+  &-text2 {
+    width: 1000px;
+    height: 90px;
+    @include flex-center;
+    position: relative;
+    top: 70px;
+  }
+  
+  &-top {
+    width: 100%;
+    height: 20%;
+    @include flex-around;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &-bottom{
+    width: 80%;
+    height: 350px;
+  position: relative;
+  top: 15%;
+  left: 17%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+  
+}
+
+.sec7-text2 > h1 {
+  font-size: 80px;
+  color: white;
+  line-height: 58px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.sec7-text1 > h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 45px;
+  font-weight: 300;
+}
+
+.top-div{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #fd9d3e;
+  z-index: 99999999999999;
+  position: fixed;
+}
+
+.top{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: #0033ff;
+  z-index: 99999999999999;
+  position: relative;
+  top: 100px;
+}
+
+.logo-div{
+  width: 20%;
+  height: 100%;
+  @include flex-center;
+  flex-direction: column;
+}
+
+.textik{
+  color: #fd9d3e;
+}
+
+.logo-div > img{
+  border: 10px solid #fd9d3e;
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  bottom: 35px;
+}
+
+.texter{
+  width: 80%;
+  height: 100%;
+  display: flex;
+
+}
+
+.text1{
+  width: 90%;
+  height: 75%;
+  background-color: white;
+  @include flex-center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.text1 > p{
+  color: rgb(102, 102, 102);
+}
+
+.text1> a{
+  color: #fd9d3e;
+  position: relative;
+  top: 30px;
+  right: 500px;
+}
+
+.bg4{
+  position: absolute;
+  bottom: 0;
+}
+
+//Section 7 End
+////////////////////////////////////////////////
+//Section 8 Start
+
+.sec8{
+  width: 100%;
+  height: 780px;
+  background-color: white;
+  position: relative;
+  bottom: 190px;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  align-items: center;
+
+ 
+
+  &-left{
+    width: 25%;
+    height: 80%;
+    position: relative;
+    left: 100px;
+  }
+  
+  &-right{
+    width: 40%;
+    height: 90%;
+    position: relative;
+    left: 100px;
+  }
+}
+
+.view-more1 {
+  width: 200px;
+  height: 70px;
+  border: 1px solid #fd9d3e;
+  position: absolute;
+  top: 380px;
+  border-radius: 50px;
+  background-color: #fd9d3e;
+  @include flex-center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.view-more1 > h1 {
+  color: white;
+  text-transform: uppercase;
+}
+
+.view-more1:hover {
+  background-color: white;
+}
+
+.view-more1:hover > h1 {
+  color: #fd9d3e;
+}
+
+.sec8-right > img{
+  position: relative;
+  left: 80px;
+}
+
+.footer{
+  width: 100%;
+  height: 800px;
+  background-color: #16181a;
+  position: relative;
+  bottom: 190px;
+  @include flex-center;
+  flex-direction: column;
+
+  &-top{
+    width: 70%;
+    height: 400px;
+    position: relative;
+    bottom: 90px;
+    @include flex-center;
+  }
+  
+  &-boxik{
+    width: 33.3%;
+    height: 100%;
+  }
+}
+
+.textlo{
+  color: white;
+}
+
+.open{
+  color: white;
+  font-size: 25px;
+}
+
+.links{
+  font-size: 20px;
+  color: white;
+  transition: 0.5s;
+}
+
+.links:hover{
+  color: #fd9d3e;
+}
+
+.hr{
+  width: 90%;
+  height: 2px;
+  background-color: rgb(44, 44, 44);
+}
+
+.text-boxik{
+  width: 400px;
+  height: 20px;
+  position: relative;
+  top: 50px;
+  right: 600px;
+  font-size: 19px;
+}
+
+.text-boxik > p{
+  color: white;
+}
+
+.text-boxik > p > a{
+  color: #fd9d3e;
+}
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+$timing        : 265ms;
+$iconColor     : #ffcf3f;
+$accent        : #d56b00;
+$bluefade      : #c6b200;
+$gradient      : #b2c600;
+
+@mixin transformScale($size: 1) {
+    transform: scale($size);
+    -ms-transform: scale($size);
+    -webkit-transform: scale($size);
+}
+
+
+
+.social-container {
+    width: 400px;
+    position: relative;
+    left: 400px;
+}
+
+.social-icons {
+    padding: 0;
+    list-style: none;
+    margin: 1em;
+  
+    li {
+        display: inline-block;
+        margin: 0.15em;
+        position: relative;
+        font-size: 1.2em;
+
+    }
+
+    i {
+        color: #fff;
+        position: absolute;
+        top: 21px;
+        left: 21px;
+        transition: all $timing ease-out;
+    }
+
+    a {
+        display: inline-block;
+      
+        &:before {
+            @include transformScale();
+            content: " ";
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            display: block;
+            background: linear-gradient(45deg, $iconColor, $accent);
+            transition: all $timing ease-out;
+        }
+        
+        &:hover:before {
+            transform: scale(0);
+            transition: all $timing ease-in;
+        }
+        
+        &:hover i {
+            @include transformScale(2.2);
+            color: $iconColor;
+            background: -webkit-linear-gradient(45deg, $iconColor, $accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: all $timing ease-in;
+        }
+    }
+  
+}
